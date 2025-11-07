@@ -1,0 +1,505 @@
+:root {
+  --azul-escuro: #001F3F;
+  --azul-secundario: #0A1F4F;
+  --verde: #045e4c;
+  --branco: #FFFFFF;
+
+  /* Tipografia responsiva */
+  --font-xs: clamp(0.75rem, 0.9vw, 0.875rem);
+  --font-sm: clamp(0.875rem, 1vw, 1rem);
+  --font-md: clamp(1rem, 1.2vw, 1.25rem);
+  --font-lg: clamp(1.25rem, 1.5vw, 1.5rem);
+  --font-xl: clamp(1.5rem, 2vw, 2rem);
+  --font-xxl: clamp(2rem, 3vw, 3rem);
+}
+
+/* UTILITÁRIOS DE TEXTO */
+.text-xs { font-size: var(--font-xs); }
+.text-sm { font-size: var(--font-sm); }
+.text-md { font-size: var(--font-md); }
+.text-lg { font-size: var(--font-lg); }
+.text-xl { font-size: var(--font-xl); }
+.text-xxl { font-size: var(--font-xxl); }
+
+/* FONTE E FUNDO */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--font-sm);
+  background: url('img/Fundo_innvictus_2.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--branco);
+  max-width: 100%;
+}
+
+main {
+  max-width: 100%;
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* LOGO */
+.logo {
+  display: inline-block;
+  height: 90px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.logo img {
+  display: block;
+  height: 140%;
+  width: auto;
+  max-width: none;
+  transform: scale(1.15);
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--azul-secundario);
+  padding: 1rem 2rem;
+  position: relative;
+  max-width: 100%;
+  height: 120px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.1rem;
+  font-size: var(--font-sm);
+}
+
+.nav-links a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(230, 221, 221, 0.425);
+  color: var(--verde);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--branco);
+  cursor: pointer;
+  margin: 15px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  gap: 0.02rem;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+  margin-top: -3rem;
+  font-size: var(--font-xxl);
+}
+
+.hero p {
+  font-size: var(--font-lg);
+  margin: 1.5rem 0;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.btn {
+  background-color: var(--verde);
+  color: var(--branco);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: var(--font-md);
+}
+
+/* SECTION */
+.section {
+  margin: auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  width: 90%;
+  line-height: 1.6;
+  height: auto;
+}
+
+.section h2 {
+  font-size: var(--font-xl);
+  margin-bottom: 1rem;
+  color: var(--verde);
+}
+
+.section p {
+  font-size: var(--font-md);
+  margin-bottom: 2rem;
+}
+
+.intro-quem-somos {
+  text-align: justify;
+}
+
+/* DESTAQUE */
+.destaque {
+  color: #00B894;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.destaque:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: underline;
+}
+
+/* ESSÊNCIA */
+.essencia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.essencia .box {
+  max-width: 800px;
+}
+
+.essencia .box h3 {
+  text-align: center;
+}
+
+/* SERVIÇOS */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .grade-servicos {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+  }
+}
+
+.servico {
+  background-color: var(--verde);
+  border: 2px solid var(--verde);
+  border-radius: 10px;
+  padding: 2rem;
+  color: var(--branco);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.servico:hover {
+  transform: translateY(-5px);
+}
+
+.servico h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-lg);
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--branco);
+}
+
+.servico h3 i {
+  font-size: 1.8rem;
+  color: var(--branco);
+}
+
+.servico p {
+  font-size: var(--font-md);
+  line-height: 1.6;
+}
+
+/* METODOLOGIA */
+.grade-metodologia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .grade-metodologia {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+  }
+}
+
+.box-metodo {
+  background-color: var(--azul-escuro);
+  border: 2px solid var(--verde);
+  border-radius: 10px;
+  padding: 2rem;
+  color: var(--branco);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.box-metodo:hover {
+  transform: translateY(-5px);
+}
+
+.box-metodo h3 {
+  font-size: var(--font-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.box-metodo p {
+  font-size: var(--font-md);
+  line-height: 1.6;
+}
+
+/* RESULTADOS */
+.grade-resultados {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.card-resultado {
+  background-color: var(--verde);
+  border-radius: 10px;
+  padding: 2rem;
+  color: var(--branco);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card-resultado:hover {
+  transform: translateY(-5px);
+}
+
+.card-resultado h3 {
+  font-size: var(--font-lg);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.card-resultado p {
+  font-size: var(--font-md);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-resultado i {
+  font-size: 2.5rem;
+  color: var(--branco);
+  opacity: 0.9;
+}
+
+/* CONTATO */
+.contato-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 2rem 0;
+  list-style: none;
+}
+
+.contato-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.contato-links li a i {
+  font-size: 2.5rem;
+  transition: transform 0.3s ease;
+}
+
+.contato-links li a:hover i {
+  transform: scale(1.3);
+}
+
+/* Cores específicas dos ícones */
+.whatsapp-link i {
+  color: #25D366;
+}
+
+.linkedin-link i {
+  color: #0077B5;
+}
+
+.instagram-link i {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.email-link i {
+  color: #ffffff;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--azul-escuro);
+  font-size: var(--font-sm);
+  width: 100%;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
+  main {
+    max-width: 100%;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .navbar {
+    max-width: 100%;
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--azul-secundario);
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-links li {
+    margin: 0.5rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    height: auto;
+  }
+
+  .hero h2 {
+    margin-top: 0;
+    font-size: var(--font-xl);
+  }
+
+  .hero p {
+    font-size: var(--font-md);
+  }
+
+  #quem-somos {
+    margin-top: -20px;
+    padding-top: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .section h2 {
+    font-size: var(--font-lg);
+  }
+
+  .section p {
+    font-size: var(--font-sm);
+    text-align: justify;
+  }
+
+  .essencia,
+  .grade-servicos,
+  .grade-metodologia,
+  .grade-resultados {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    gap: 2rem;
+    max-width: 100%;
+  }
+
+  .section .box,
+  .servico,
+  .box-metodo,
+  .card-resultado {
+    width: 100%;
+    font-size: var(--font-sm);
+  }
+
+  .section .box h3,
+  .servico h3,
+  .box-metodo h3,
+  .card-resultado h3 {
+    font-size: var(--font-md);
+  }
+
+  .contato-links li a i {
+    font-size: 2rem;
+  }
+}
+
