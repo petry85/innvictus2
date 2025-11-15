@@ -1,3 +1,6 @@
+/* ==========================
+   VARIÁVEIS DE COR
+========================== */
 :root {
   --azul-escuro: #001F3F;
   --azul-secundario: #0A1F4F;
@@ -5,7 +8,9 @@
   --branco: #FFFFFF;
 }
 
-/* FONTE E FUNDO */
+/* ==========================
+   ESTILOS GERAIS
+========================== */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -21,62 +26,54 @@ main {
   align-items: center;
 }
 
-li {
-  list-style-type: none;
-}
+li { list-style-type: none; }
 
-/* LOGO */
+/* ==========================
+   LOGO
+========================== */
 .logo {
   display: inline-block;
   height: 90px;
   overflow: hidden;
   line-height: 0;
 }
-
 .logo img {
   display: block;
   height: 140%;
   width: auto;
-  max-width: none;
   transform: scale(1.15);
   transform-origin: center center;
   transition: transform 0.2s ease;
 }
 
-/* NAVBAR */
+/* ==========================
+   NAVBAR
+========================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--azul-secundario);
   padding: 1rem 2rem;
-  position: relative;
-  max-width: 100%;
   height: 120px;
 }
-
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 0.1rem;
   font-size: 1rem;
 }
-
 .nav-links a {
- color: var(--branco);
+  color: var(--branco);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
-
 .nav-links a:hover {
-  background-color: rgba(230, 221, 221, 0.425); /* fundo branco semi-transparente */
-  color: var(--verde); /* texto verde */
-  border-radius: 8px; /* borda arredondada */
+  background-color: rgba(230, 221, 221, 0.671);
+  color: var(--verde);
 }
-
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -84,136 +81,80 @@ li {
   border: none;
   color: var(--branco);
   cursor: pointer;
-  margin: 15px;
 }
 
-/* generico h2*/
+/* ==========================
+   TITULOS
+========================== */
 h2 {
   font-size: 2.5rem;
   color: var(--verde);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   background-color: rgba(252, 252, 252, 0.7);
   width: 100vw;
-  margin-bottom: 2rem;
   margin-left: calc(-50vw + 50%);
+  text-align: center;
+  box-sizing: border-box;
 }
 
-/* 1º section hero */
-#quem-somos {
-  margin-top: -150px; /* Compensar a altura da navbar */
-  padding-top: 1rem;
-}
-
+/* ==========================
+   HERO
+========================== */
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /*padding: 0.5rem;*/
   height: 100vh;
-  gap: 0.02rem;
   box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3);
-  
 }
-
-.hero h2{
-  margin-top: -3rem; /*deixar o título mais próximo do topo*/
-  font-size: 4rem;
-}
-
-.hero p {
-  font-size: 2rem;
-  margin: 1.5rem 0;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
+.hero h2 { font-size: 4rem; margin-top: -3rem; }
+.hero p { font-size: 2rem; max-width: 800px; line-height: 1.6; }
 .btn {
   background-color: var(--verde);
   color: var(--branco);
   padding: 0.8rem 1.5rem;
-  border: none;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   font-size: 2rem;
 }
 
-/* SECTION */
+/* ==========================
+   SECTIONS
+========================== */
 .section {
   margin: auto;
   text-align: center;
   padding: 3rem 2rem;
   width: 90%;
   line-height: 1.6;
-  height: auto;
 }
+.section h2 { font-size: 2.5rem; }
+.section p { font-size: 1.5rem; margin-bottom: 2rem; }
 
-.section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--verde);
-}
-
-.section p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.intro-quem-somos {
-  text-align: justify;
-}
-
-/* DESTAQUE */
-.destaque {
-  color: #00B894;
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.08);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.destaque:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  text-decoration: underline;
-}
-
-/* QUEM SOMOS - empilhado */
+/* ==========================
+   QUEM SOMOS
+========================== */
 .essencia {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
-  padding: 0 1rem;
+  
+}
+.essencia .box { max-width: 800px; }
+
+.essencia .box h3 { 
+  font-size: 2rem;
+  text-align: center; 
 }
 
-.essencia .box{
-  max-width: 800px; /*largura dos cards*/
-}
-
-.essencia .box h3{
+.essencia p{
   text-align: center;
+  font-size: 1.5rem;
 }
-
-/* SERVIÇOS - grid 2x2 no desktop */
-.grade-servicos {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  margin-top: 1rem;
-  padding: 0 1rem;
-}
-
-@media (min-width: 768px) {
-  .grade-servicos {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 2rem;
-  }
-}
-
-/* CARD GENÉRICO */
 .box {
   background-color: var(--azul-escuro);
   border: 2px solid var(--verde);
@@ -228,88 +169,54 @@ h2 {
   text-align: left;
 }
 
-.box:hover {
-  transform: translateY(-5px);
-}
-
-.box h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: var(--branco);
+/* DESTAQUE */
+.destaque {
+  color: #00B894;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-.box h3 i {
-  font-size: 1.8rem;
+/* ==========================
+   SERVIÇOS
+========================== */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
 }
-
-.box p {
-  font-size: 1.8rem;
-  line-height: 1.6;
+@media (min-width: 768px) {
+  .grade-servicos { grid-template-columns: repeat(2, 1fr); }
 }
-
-/* ====== CARD DE SERVIÇO - fundo verde ======*/
-.servico {
-  background-color: var(--verde);
-  border: none;
-  color: var(--branco);
-
-}
-
-
 .box-servico {
   background-color: var(--verde);
-  padding: 3px;
   border-radius: 15px;
-  max-width: 100%; /*largura dos cards*/
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
   margin: 0 auto;
+  padding: 2rem;
 }
-.box-servico h3{
-  margin-bottom: 1rem;
-  padding: 1rem;
+.box-servico h3 {
   font-size: 2rem;
   color: var(--branco);
-  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+.box-servico p { text-align: justify; }
 
-.box-servico p{
-  text-align: justify;
-  padding: 1rem;
-}
-
-.box-servico:hover {
-  transform: translateY(-5px);
-}
-
-
-
-/* ======== METODOLOGIA - grid 2x2 ======= */
-
+/* ==========================
+   METODOLOGIA
+========================== */
 .grade-metodologia {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  margin-top: 2rem;
-  padding: 0 1rem;
 }
-
 @media (min-width: 768px) {
-  .grade-metodologia {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 2rem;
-  }
+  .grade-metodologia { grid-template-columns: repeat(2, 1fr); }
 }
-
-/* Card da metodologia */
 .box-metodo {
   background-color: var(--azul-escuro);
   border: 2px solid var(--verde);
@@ -317,207 +224,90 @@ h2 {
   padding: 2rem;
   color: var(--branco);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  text-align: left;
 }
-
-.box-metodo:hover {
-  transform: translateY(-5px);
-}
-
 .box-metodo h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
   font-size: 2rem;
   color: var(--branco);
-  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.box-metodo h3 i {
-  font-size: 1.8rem;
-  color: var(--branco);
-}
-
-.box-metodo p {
-  font-size: 1.6rem;
-  line-height: 1.6;
-}
-
-
-/* ======= RESULTADOS grid 2x2 com cards verdes======*/
-
-
+/* ==========================
+   RESULTADOS
+========================== */
 .grade-resultados {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  margin-top: 2rem;
-  padding: 0 1rem;
 }
-.card-resultado p {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  text-align: center; /* centraliza o texto */
-}
-
-
 @media (min-width: 768px) {
-  .grade-resultados {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 2rem;
-  }
+  .grade-resultados { grid-template-columns: repeat(2, 1fr); }
 }
-
 .card-resultado {
   background-color: var(--verde);
   border-radius: 10px;
   padding: 2rem;
   color: var(--branco);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
   text-align: center;
 }
+.card-resultado h3 { font-size: 2rem; font-weight: bold; }
+.card-resultado p { text-align: center; }
+.card-resultado i { font-size: 2.5rem; }
 
-.card-resultado:hover {
-  transform: translateY(-5px);
-}
-
-.card-resultado h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.card-resultado p {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.card-resultado i {
-  font-size: 2.5rem;
-  color: var(--branco);
-  opacity: 0.9;
-}
-
-
-/* ==== CONTATO - layout horizontal e ícones coloridos ====*/
+/* ==========================
+   CONTATO
+========================== */
 .contato-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 0;
   margin: 2rem 0;
+  font-size: 2rem;
   list-style: none;
 }
-
-.contato-links li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.contato-links li a i {
-  font-size: 2.5rem;
-  transition: transform 0.3s ease;
-}
-
-.contato-links li a:hover i {
-  transform: scale(1.3);
-}
-
-/* Cores específicas dos ícones */
-.whatsapp-link i {
-  color: #25D366;
-}
-
-.linkedin-link i {
-  color: #0077B5;
-}
-
+.contato-links li a { text-decoration: none; }
+.whatsapp-link i { color: #25D366; }
+.linkedin-link i { color: #0077B5; }
 .instagram-link i {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-.email-link i {
-  color: #ffffff;
-}
+.email-link i { color: #ffffff; }
 
 .telefone-contato {
-  margin-top: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
 }
-
 .telefone-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
-  color: var(--branco);
 }
-
-.telefone-item i {
-  font-size: 1rem;
-}
-
-.telefone-item a{
+.telefone-item a {
   color: var(--branco);
   text-decoration: none;
 }
 
-/* Responsivo: empilhar no celular */
-@media (max-width: 768px) {
-  .telefone-contato {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .telefone-item {
-    justify-content: center;
-  }
-}
-
-/* FOOTER */
+/* ==========================
+   FOOTER
+========================== */
 footer {
   text-align: center;
   padding: 1rem;
   background-color: var(--azul-escuro);
   font-size: 0.9rem;
-  width: 100%;
 }
-
-/* ======= RESPONSIVO ======= */
+/* ==========================
+   RESPONSIVO - MOBILE
+========================== */
 @media (max-width: 768px) {
-  body {
-    max-width: 100%;
-  }
-
-  main {
-    max-width: 100%;
-  }
-
-  .logo {
-    height: 40px;
-  }
-
-  .navbar {
-    max-width: 100%;
-    height: 60px;
-  }
-
+  /* Navbar e logo */
+  .logo { height: 40px; }
+  .navbar { height: 60px; }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -529,66 +319,30 @@ footer {
     padding: 1rem 0;
     z-index: 999;
   }
+  .nav-links.active { display: flex; }
+  .menu-toggle { display: block; }
+  .nav-links a { padding: 0.5rem 1rem; }
+  .nav-links li { margin: 0.5rem; }
 
-  .nav-links.active {
-    display: flex;
-  }
+  /* Hero */
+  .hero { padding: 2rem 1rem; height: auto; }
+  .hero h2 { font-size: 2.5rem; margin-top: 0; }
+  .hero p { font-size: 1.2rem; }
 
-  .menu-toggle {
-    display: block;
-  }
+  /* Seções */
+  .section { padding: 2rem 1rem; font-size: 1rem; height: auto; }
+  .section h2 { font-size: 2rem; }
+  .section p { font-size: 1rem; text-align: center; }
 
-  .nav-links a {
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-links li{
-    margin: 0.5rem;
-  }
-
-  .hero {
-    padding: 2rem 1rem;
-    font-size: 1rem;
-    height: auto;
-  }
-
-  .hero h2{
-    margin-top: 0;
-  }
-
-  #quem-somos {
-  margin-top: -20px; /* Compensar a altura da navbar */
-  padding-top: 1rem;
-  }
-  .section {
-    padding: 2rem 1rem;
-    font-size: 1rem;
-    height: auto;
-  }
-
-  .section h2 {
-    font-size: 2rem;
-  }
-
-  .section p {
-    font-size: 1rem;
-    text-align: justify;
-  }
-
- 
+  /* Quem Somos */
   .essencia {
     grid-template-columns: 1fr;
     padding: 0 1rem;
     max-width: 70%;
+    margin: 0 auto;
   }
 
-  /* Cards de serviço no celular */
-  .servico {
-    width: 100%;
-    max-width: 320px;   /* controla a largura máxima do card */
-    margin: 0 auto;     /* centraliza o card na tela */
-    font-size: 1.2rem;
-}
+  /* Serviços */
   .grade-servicos {
     grid-template-columns: 1fr;
     padding: 0 1rem;
@@ -596,48 +350,39 @@ footer {
     max-width: 90%;
     margin: 0 auto;
   }
+  .box-servico {
+    max-width: 320px;
+    margin: 0 auto;
+  }
 
+  /* Metodologia */
+  .box-metodo {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Resultados */
+  .card-resultado {
+    max-width: 320px;
+    margin: 0 auto;
+  }
   .card-resultado p {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    text-align: center; /* centraliza o texto */
-  }
-
-  .servico {
-  width: 100%;
-  max-width: 320px; /* controla a largura máxima do card */
-  margin: 0 auto;
-  }
-
-
-  .section .box {
-    width: 100%;
     font-size: 1.2rem;
-  }
-
-  .section .box h3 {
-    font-size: 1.5rem
-  }
-
-  .contato-links li a i {
-    font-size: 2rem;
-    transition: transform 0.3s ease;
-  }
-  .section.contato p {
     text-align: center;
   }
 
-  /* Telefones em branco e sem sublinhado */
-  .telefone-contato span {
+  /* Contato */
+  .section.contato p { text-align: center; }
+  .contato-links li a i { font-size: 2rem; }
+
+  /* Telefones */
+  .telefone-contato {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .telefone-item { justify-content: center; }
+  .telefone-item a {
     color: var(--branco);
     text-decoration: none;
   }
-
-  /* Caso use <a href="tel:..."> para tornar clicável */
-  .telefone-contato i {
-    color: var(--branco);
-    text-decoration: none;
-  }
-
 }
