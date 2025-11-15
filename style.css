@@ -87,6 +87,17 @@ li {
   margin: 15px;
 }
 
+/* generico h2*/
+h2 {
+  font-size: 2.5rem;
+  color: var(--verde);
+  margin-bottom: 1rem;
+  background-color: rgba(252, 252, 252, 0.7);
+  width: 100vw;
+  margin-bottom: 2rem;
+  margin-left: calc(-50vw + 50%);
+}
+
 /* 1º section hero */
 #quem-somos {
   margin-top: -150px; /* Compensar a altura da navbar */
@@ -190,7 +201,7 @@ li {
 .grade-servicos {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 7rem;
+  gap: 3rem;
   margin-top: 1rem;
   padding: 0 1rem;
 }
@@ -460,6 +471,11 @@ li {
 
 .telefone-item i {
   font-size: 1rem;
+}
+
+.telefone-item a{
+  color: var(--branco);
+  text-decoration: none;
 }
 
 /* Responsivo: empilhar no celular */
