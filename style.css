@@ -3,29 +3,12 @@
   --azul-secundario: #0A1F4F;
   --verde: #045e4c;
   --branco: #FFFFFF;
-
-  /* Tipografia responsiva */
-  --font-xs: clamp(0.75rem, 0.9vw, 0.875rem);
-  --font-sm: clamp(0.875rem, 1vw, 1rem);
-  --font-md: clamp(1rem, 1.2vw, 1.25rem);
-  --font-lg: clamp(1.25rem, 1.5vw, 1.5rem);
-  --font-xl: clamp(1.5rem, 2vw, 2rem);
-  --font-xxl: clamp(2rem, 3vw, 3rem);
 }
-
-/* UTILITÁRIOS DE TEXTO */
-.text-xs { font-size: var(--font-xs); }
-.text-sm { font-size: var(--font-sm); }
-.text-md { font-size: var(--font-md); }
-.text-lg { font-size: var(--font-lg); }
-.text-xl { font-size: var(--font-xl); }
-.text-xxl { font-size: var(--font-xxl); }
 
 /* FONTE E FUNDO */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-size: var(--font-sm);
   background: url('img/Fundo_innvictus_2.png') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
@@ -76,11 +59,11 @@ li {
   list-style: none;
   display: flex;
   gap: 0.1rem;
-  font-size: var(--font-sm);
+  font-size: 1rem;
 }
 
 .nav-links a {
-  color: var(--branco);
+ color: var(--branco);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -89,8 +72,9 @@ li {
 }
 
 .nav-links a:hover {
-  background-color: rgba(230, 221, 221, 0.425);
-  color: var(--verde);
+  background-color: rgba(230, 221, 221, 0.425); /* fundo branco semi-transparente */
+  color: var(--verde); /* texto verde */
+  border-radius: 8px; /* borda arredondada */
 }
 
 .menu-toggle {
@@ -103,25 +87,32 @@ li {
   margin: 15px;
 }
 
-/* HERO */
+/* 1º section hero */
+#quem-somos {
+  margin-top: -150px; /* Compensar a altura da navbar */
+  padding-top: 1rem;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  /*padding: 0.5rem;*/
   height: 100vh;
   gap: 0.02rem;
   box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3);
+  
 }
 
-.hero h2 {
-  margin-top: -3rem;
-  font-size: var(--font-xxl);
+.hero h2{
+  margin-top: -3rem; /*deixar o título mais próximo do topo*/
+  font-size: 4rem;
 }
 
 .hero p {
-  font-size: var(--font-lg);
+  font-size: 2rem;
   margin: 1.5rem 0;
   max-width: 800px;
   line-height: 1.6;
@@ -135,7 +126,7 @@ li {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  font-size: var(--font-md);
+  font-size: 2rem;
 }
 
 /* SECTION */
@@ -149,13 +140,13 @@ li {
 }
 
 .section h2 {
-  font-size: var(--font-xl);
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--verde);
 }
 
 .section p {
-  font-size: var(--font-md);
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -178,7 +169,7 @@ li {
   text-decoration: underline;
 }
 
-/* ESSÊNCIA */
+/* QUEM SOMOS - empilhado */
 .essencia {
   display: grid;
   grid-template-columns: 1fr;
@@ -187,15 +178,15 @@ li {
   padding: 0 1rem;
 }
 
-.essencia .box {
-  max-width: 800px;
+.essencia .box{
+  max-width: 800px; /*largura dos cards*/
 }
 
-.essencia .box h3 {
+.essencia .box h3{
   text-align: center;
 }
 
-/* SERVIÇOS */
+/* SERVIÇOS - grid 2x2 no desktop */
 .grade-servicos {
   display: grid;
   grid-template-columns: 1fr;
@@ -211,45 +202,87 @@ li {
   }
 }
 
-.servico {
-  background-color: var(--verde);
+/* CARD GENÉRICO */
+.box {
+  background-color: var(--azul-escuro);
   border: 2px solid var(--verde);
   border-radius: 10px;
   padding: 2rem;
   color: var(--branco);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
-  text-align: left;
-  max-width: 700px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
+  text-align: left;
 }
 
-.servico:hover {
+.box:hover {
   transform: translateY(-5px);
 }
 
-.servico h3 {
+.box h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--branco);
+  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: var(--font-lg);
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: var(--branco);
 }
 
-.servico h3 i {
+.box h3 i {
   font-size: 1.8rem;
-  color: var(--branco);
 }
 
-.servico p {
-  font-size: var(--font-md);
+.box p {
+  font-size: 1.8rem;
   line-height: 1.6;
 }
 
-/* METODOLOGIA */
+/* ====== CARD DE SERVIÇO - fundo verde ======*/
+.servico {
+  background-color: var(--verde);
+  border: none;
+  color: var(--branco);
+
+}
+
+
+.box-servico {
+  background-color: var(--verde);
+  padding: 3px;
+  border-radius: 15px;
+  max-width: 100%; /*largura dos cards*/
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+.box-servico h3{
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  color: var(--branco);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.box-servico p{
+  text-align: justify;
+  padding: 1rem;
+}
+
+.box-servico:hover {
+  transform: translateY(-5px);
+}
+
+
+
+/* ======== METODOLOGIA - grid 2x2 ======= */
+
 .grade-metodologia {
   display: grid;
   grid-template-columns: 1fr;
@@ -265,6 +298,7 @@ li {
   }
 }
 
+/* Card da metodologia */
 .box-metodo {
   background-color: var(--azul-escuro);
   border: 2px solid var(--verde);
@@ -274,8 +308,6 @@ li {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   text-align: left;
-  max-width: 700px;
-  margin: 0 auto;
 }
 
 .box-metodo:hover {
@@ -283,25 +315,50 @@ li {
 }
 
 .box-metodo h3 {
-  font-size: var(--font-lg);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--branco);
+  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+}
+
+.box-metodo h3 i {
+  font-size: 1.8rem;
+  color: var(--branco);
 }
 
 .box-metodo p {
-  font-size: var(--font-md);
+  font-size: 1.6rem;
   line-height: 1.6;
 }
 
-/* RESULTADOS */
+
+/* ======= RESULTADOS grid 2x2 com cards verdes======*/
+
+
 .grade-resultados {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 3rem;
   margin-top: 2rem;
   padding: 0 1rem;
+}
+.card-resultado p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center; /* centraliza o texto */
+}
+
+
+@media (min-width: 768px) {
+  .grade-resultados {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+  }
 }
 
 .card-resultado {
@@ -312,8 +369,6 @@ li {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   text-align: center;
-  max-width: 100%;
-  margin: 0 auto;
 }
 
 .card-resultado:hover {
@@ -321,14 +376,14 @@ li {
 }
 
 .card-resultado h3 {
-  font-size: var(--font-lg);
   margin-top: 0;
   margin-bottom: 1rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 .card-resultado p {
-  font-size: var(--font-md);
+  font-size: 1.6rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -339,7 +394,8 @@ li {
   opacity: 0.9;
 }
 
-/* CONTATO */
+
+/* ==== CONTATO - layout horizontal e ícones coloridos ====*/
 .contato-links {
   display: flex;
   justify-content: center;
@@ -385,16 +441,49 @@ li {
   color: #ffffff;
 }
 
+.telefone-contato {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.telefone-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--branco);
+}
+
+.telefone-item i {
+  font-size: 1rem;
+}
+
+/* Responsivo: empilhar no celular */
+@media (max-width: 768px) {
+  .telefone-contato {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .telefone-item {
+    justify-content: center;
+  }
+}
+
 /* FOOTER */
 footer {
   text-align: center;
   padding: 1rem;
   background-color: var(--azul-escuro);
-  font-size: var(--font-sm);
+  font-size: 0.9rem;
   width: 100%;
 }
 
-/* RESPONSIVO */
+/* ======= RESPONSIVO ======= */
 @media (max-width: 768px) {
   body {
     max-width: 100%;
@@ -437,69 +526,102 @@ footer {
     padding: 0.5rem 1rem;
   }
 
-  .nav-links li {
+  .nav-links li{
     margin: 0.5rem;
   }
 
   .hero {
     padding: 2rem 1rem;
+    font-size: 1rem;
     height: auto;
   }
 
-  .hero h2 {
+  .hero h2{
     margin-top: 0;
-    font-size: var(--font-xl);
-  }
-
-  .hero p {
-    font-size: var(--font-md);
   }
 
   #quem-somos {
-    margin-top: -20px;
-    padding-top: 1rem;
+  margin-top: -20px; /* Compensar a altura da navbar */
+  padding-top: 1rem;
   }
-
   .section {
     padding: 2rem 1rem;
+    font-size: 1rem;
+    height: auto;
   }
 
   .section h2 {
-    font-size: var(--font-lg);
+    font-size: 2rem;
   }
 
   .section p {
-    font-size: var(--font-sm);
+    font-size: 1rem;
     text-align: justify;
   }
 
-  .essencia,
-  .grade-servicos,
-  .grade-metodologia,
-  .grade-resultados {
+ 
+  .essencia {
     grid-template-columns: 1fr;
     padding: 0 1rem;
-    gap: 2rem;
-    max-width: 100%;
+    max-width: 70%;
   }
 
-  .section .box,
-  .servico,
-  .box-metodo,
-  .card-resultado {
+  /* Cards de serviço no celular */
+  .servico {
     width: 100%;
-    font-size: var(--font-sm);
+    max-width: 320px;   /* controla a largura máxima do card */
+    margin: 0 auto;     /* centraliza o card na tela */
+    font-size: 1.2rem;
+}
+  .grade-servicos {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    gap: 3rem;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
-  .section .box h3,
-  .servico h3,
-  .box-metodo h3,
-  .card-resultado h3 {
-    font-size: var(--font-md);
+  .card-resultado p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center; /* centraliza o texto */
+  }
+
+  .servico {
+  width: 100%;
+  max-width: 320px; /* controla a largura máxima do card */
+  margin: 0 auto;
+  }
+
+
+  .section .box {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .section .box h3 {
+    font-size: 1.5rem
   }
 
   .contato-links li a i {
     font-size: 2rem;
+    transition: transform 0.3s ease;
   }
-}
+  .section.contato p {
+    text-align: center;
+  }
 
+  /* Telefones em branco e sem sublinhado */
+  .telefone-contato span {
+    color: var(--branco);
+    text-decoration: none;
+  }
+
+  /* Caso use <a href="tel:..."> para tornar clicável */
+  .telefone-contato i {
+    color: var(--branco);
+    text-decoration: none;
+  }
+
+}
