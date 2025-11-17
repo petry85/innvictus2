@@ -334,12 +334,30 @@ footer {
   .section h2 { font-size: 2rem; }
   .section p { font-size: 1rem; text-align: center; }
 
-  /* Quem Somos */
+  /* Quem Somos - Mobile */
+@media (max-width: 768px) {
   .essencia {
-    grid-template-columns: 1fr;
+    display: flex;              /* Troca grid por flex */
+    flex-direction: column;     /* Empilha os elementos */
+    align-items: center;        /* Centraliza horizontalmente */
+    justify-content: center;    /* Centraliza verticalmente */
     padding: 0 1rem;
-    max-width: 70%;
-    margin: 0 auto;
+    max-width: 100%;            /* Garante largura total */
+    margin: auto;
+  }
+
+  .essencia .box {
+    max-width: 320px;           /* Limita largura para celular */
+    width: 100%;                /* Ocupa toda a largura disponível */
+    text-align: center;         /* Centraliza o conteúdo */
+  }
+}
+
+  .box {
+    align-items: center;
+    max-width: 100%;
+    margin:auto;
+    padding: 1.5rem;
   }
 
   /* Serviços */
